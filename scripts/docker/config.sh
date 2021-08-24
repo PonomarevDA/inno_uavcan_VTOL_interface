@@ -11,3 +11,4 @@ else
 fi
 REPOSITORY_NAME=gui_tool
 DOCKERFILE_RELATIVE_PATH=../..
+DEV_NAME=slcan # alternative: /dev/serial/by-id/usb-STMicroelectronics_STM32_STLink_066FFF545151717867185622-if02

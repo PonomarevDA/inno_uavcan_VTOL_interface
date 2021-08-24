@@ -22,13 +22,11 @@ RUN pip3 install --upgrade pip
 
 
 # 3. Install the package
-RUN git clone https://github.com/PonomarevDA/inno_uavcan_VTOL_interface --recursive --branch pr-ubuntu-running-fixes .
 RUN pip3 install screeninfo
+RUN git clone https://github.com/PonomarevDA/inno_uavcan_VTOL_interface --recursive --branch docker_example .
 RUN pip3 install .
 
 CMD echo "main process has been started"                        &&  \
-    mkdir -p /dev/serial/by-id                                  &&  \
-    ln -s /dev/ttyACM0 /dev/serial/by-id/serial_porty_symlink   &&  \
     cd uavcan_gui_tool                                          &&  \
     uavcan_gui_tool                                             &&  \
     echo "container has been finished"
